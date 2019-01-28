@@ -18,17 +18,19 @@ Each hardware board includes a processor. When a target for a hardware board is 
 For example, a BeagleBone Black board includes an ARM Cortex-A8 processor. Assume a target for BeagleBone Black boards supports the BeagleBone Black board, and a target for ARM Cortex-A processors supports the processor. Then you can develop a target for BeagleBone Black boards using the target for ARM Cortex-A processors as its reference target.
 
 # 1.3 How do we compile and run a C program?
-We first create a C program using an editor and save the file as filename.c
-$ vi filename.c
- 
-Then compile it using below command.
-$ gcc –Wall filename.c –o filename
- 
-The option -Wall enables all compiler’s warning messages. This option is recommended to generate better code.
-The option -o is used to specify output file name. If we do not use this option, then an output file with name a.out is generated.
 
-After compilation executable is generated and we run the generated executable using below command.
-$ ./filename 
+  We first create a C program using an editor and save the file as filename.c
+    **$ vi filename.c**
+ 
+  Then compile it using below command.
+   **$ gcc –Wall filename.c –o filename**
+ 
+  The option -Wall enables all compiler’s warning messages. This option is recommended to generate better code.
+  The option -o is used to specify output file name. If we do not use this option, then an output file with name a.out is generated.
+
+  After compilation executable is generated and we run the generated executable using below command.
+
+   **$ ./filename** 
  
 # 1.3.1 What goes inside the compilation process?
 Compiler converts a C program into an executable. There are four phases for a C program to become an executable:
@@ -40,7 +42,7 @@ d. Linking
 
 By executing below command, We get the all intermediate files in the current directory along with the executable.
 
-$gcc –Wall –save-temps filename.c –o filename 
+  **$gcc –Wall –save-temps filename.c –o filename**
 
 ### 1.3.1.1 Pre-processing
 This is the first phase through which source code is passed. This phase include:
@@ -63,25 +65,38 @@ This is the final phase in which all the linking of function calls with their de
 is the result of the linker making copy of all used library functions to the executable file. Static Linking creates larger binary files, and need more space on disk and main memory. Examples of static libraries (libraries which are statically linked) are, .a files in Linux and .lib files in Windows.
 
 # 1.4.1 Steps to create a static library
-   ## 1. Create a C file that contains functions in your library.
+ ## 1. Create a C file that contains functions in your library.
+   
    /* Filename: lib_mylib.c */
+   
     #include <stdio.h> 
+    
     void fun(void) 
+    
     { 
+    
     printf("fun() called from a static library"); 
+    
     } 
     
+    
    ## 2. Create a header file for the library
+   
    /* Filename: lib_mylib.h */
+   
     void fun(void); 
     
    ## 3. Compile library files. 
-   gcc -c lib_mylib.c -o lib_mylib.o 
+   
+   **gcc -c lib_mylib.c -o lib_mylib.o** 
    
    ## 4. Create static library. This step is to bundle multiple object files in one static library (see ar for details). The output of this step is static library.
-    ar rcs lib_mylib.a lib_mylib.o 
+      
+      **ar rcs lib_mylib.a lib_mylib.o** 
     
-    ## 5. Now our static library is ready to use. At this point we could just copy lib_mylib.a somewhere else to use it. For demo purposes, let us keep the library in the current directory.
+   ## 5. Now our static library is ready to use. 
+   
+   At this point we could just copy lib_mylib.a somewhere else to use it. For demo purposes, let us keep the library in the current directory.
     
    
    
