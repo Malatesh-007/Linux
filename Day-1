@@ -1,6 +1,23 @@
-What is an Embedded System ?
+1.1 What is an Embedded System ?
 
 An embedded system is a combination of computer hardware and software, either fixed in capability or programmable, designed for a
 specific function or functions within a larger system. Industrial machines, agricultural and process industry devices, automobiles,
 medical equipment, cameras, household appliances, airplanes, vending machines and toys, as well as mobile devices, are possible 
 locations for an embedded system.
+
+1.2 What Is a Target?
+
+A target deploys MATLAB® and Simulink® designs to embedded hardware. With a target, you can prototype, verify, and deploy your application by generating processor-specific code, integrating real-time operating systems and device drivers, and profiling execution on your embedded hardware.
+
+1.2.1 Hierarchy of Targets
+You can develop a target by using an existing target. The existing target is then a reference target of the target being developed. This guide shows you how to develop a target using a MathWorks® reference target.
+
+Targets support hardware at the processor or board level. A hardware board includes one or more processors, and perhaps external memory, I/O devices, and other electronic components.
+
+The figure shows the relationship between:
+
+    A target and its reference target
+
+    A hardware board and the processor it includes
+
+    The target and hardware board they support
