@@ -6,7 +6,7 @@ An embedded system is a combination of computer hardware and software, either fi
 
 A target deploys MATLAB® and Simulink® designs to embedded hardware. With a target, you can prototype, verify, and deploy your application by generating processor-specific code, integrating real-time operating systems and device drivers, and profiling execution on your embedded hardware.
 
-# 1.2.1 Hierarchy of Targets
+## 1.2.1 Hierarchy of Targets
 You can develop a target by using an existing target. The existing target is then a reference target of the target being    developed. This guide shows you how to develop a target using a MathWorks® reference target.
 
 Targets support hardware at the processor or board level. A hardware board includes one or more processors, and perhaps external memory, I/O devices, and other electronic components.
